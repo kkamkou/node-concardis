@@ -1,0 +1,31 @@
+{
+  "name": "concardis",
+  "version": "0.1.0",
+  "main": "./lib/concardis.js",
+  "author": "Kanstantsin Kamkou <kkamkou@gmail.com>",
+  "description": "",
+  "keywords": ["a", "b"],
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/kkamkou/node-concardis.git"
+  },
+  "bugs" : {
+    "url" : "https://github.com/kkamkou/node-concardis/issues"
+  },
+  "license" : "MIT",
+  "scripts": {
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+  },
+  "dependencies": {
+    "lodash": "~4.14",
+    "request": "~2.74"
+  },
+  "devDependencies": {
+    "istanbul": "~0.4.3",
+    "should": "~8.4",
+    "mocha": "~2.5",
+    "mocha-lcov-reporter": "~1.2.0",
+    "coveralls": "~2.11",
+    "sinon": "~1.17"
+  }
+}
