@@ -7,3 +7,5 @@
 - [directlink](https://support-payengine.v-psp.com/~/media/kdb/pdf/concardis/en/5fb19037-3393-4cea-bace-1fd21718119f/directlink.ashx)
 
 
+## Sign
+- SHA-256 (own implementation of `Collection`)
