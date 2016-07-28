@@ -12,7 +12,7 @@ node-concardis
 
 
 ## Sign
-- SHA-256 (is used by default in `SignedCollection`)
+
 
 ## Examples
 
@@ -40,6 +40,15 @@ const url = concardis.hosted.UrlSmart.production('myshatoken', conf);
 
 console.log(url.toString());
 ```
+
+#### SHA signature
+  - SHA-256 (is used by default in `request.CollectionChecksum`)
+
+```js
+const checksum = concardis.request.CollectionChecksum(
+    new concardis.request.ObjectCollection({'pspid': 'example'}), 'sha_phrase'/*, 'sha512'*/
+);
+console.log(checksum.toString());
 
 ```
 // https://secure.payengine.de/ncol/prod/orderdirect.asp

@@ -1,7 +1,7 @@
 {
   "name": "concardis",
   "version": "0.1.0",
-  "main": "./lib/concardis.js",
+  "main": "./lib/index.js",
   "author": "Kanstantsin Kamkou <kkamkou@gmail.com>",
   "description": "",
   "keywords": ["a", "b"],

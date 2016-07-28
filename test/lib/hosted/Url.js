@@ -5,8 +5,8 @@ const DIR_SRC = __dirname.replace('/test', '');
 const path = require('path');
 
 const Url = require(path.join(DIR_SRC, 'Url')),
-  Argument = require(path.join(DIR_SRC, '../request/query', 'Argument')),
-  Collection = require(path.join(DIR_SRC, '../request/query', 'SimpleCollection'));
+  Argument = require(path.join(DIR_SRC, '../request', 'Argument')),
+  Collection = require(path.join(DIR_SRC, '../request', 'SimpleCollection'));
 
 describe('HostedPageUrl', () => {
   it('thrown in case of invalid params', () => {
@@ -41,8 +41,8 @@ describe('HostedPageUrl', () => {
       url = new Url('https://example.com', new Collection(args));
 
     url.toString().should.equal(
-      'https://example.com/?PARAMETERS.ACCEPTURL=val&PARAMETERS.EXCEPTIONURL=val' +
-      '&ACCOUNT.PSPID=val&SHASIGNATURE.SHASIGN=val&CARD.PAYMENTMETHOD=val'
+      'https://example.com/?ACCOUNT.PSPID=val&CARD.PAYMENTMETHOD=val&PARAMETERS.ACCEPTURL=val' +
+      '&PARAMETERS.EXCEPTIONURL=val&SHASIGNATURE.SHASIGN=val'
     );
   });
 });
