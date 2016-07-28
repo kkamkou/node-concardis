@@ -16,14 +16,18 @@ node-concardis
 
 ## Examples
 
-#### Hosted tokenization page
+#### First steps
 ```js
-/**
- * To be able to use the Hosted Tokenization Page, you need to have at least one of the following options enabled:
- *  - One Page Checkout (option ID: OPC)
- *  - Alias Manager (option ID: REC1, REC2, RECX)
- */
+const concardis = require('concardis');
+````
 
+#### Hosted tokenization page
+
+To be able to use the Hosted Tokenization Page, you need to have at least one of the following options enabled:
+  - One Page Checkout (option ID: OPC)
+  - Alias Manager (option ID: REC1, REC2, RECX)
+
+```js
 const conf = {
   'card.paymentmethod': 'CreditCard',
   'parameters.accepturl': 'http://ya.ru/succ',
@@ -31,12 +35,13 @@ const conf = {
   'account.pspid': 'myaccount'
 };
 
-console.log((new UrlSmart('myshatoken', conf)).toString());
-console.log((new UrlSmart('myshatoken', conf, 'sha512')).toString());
+const url = concardis.hosted.UrlSmart.production('myshatoken', conf);
+// or concardis.hosted.UrlSmart.test('myshatoken', conf, 'sha512')
+
+console.log(url.toString());
 ```
 
 ```
 // https://secure.payengine.de/ncol/prod/orderdirect.asp
 // https://secure.payengine.de/ncol/prod/alias_gateway.asp
-// https://secure.payengine.de/Tokenization/HostedPage
 ```
