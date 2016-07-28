@@ -9,3 +9,28 @@
 
 ## Sign
 - SHA-256 (own implementation of `Collection`)
+
+
+## Examples
+
+#### Hosted tokenization page
+```js
+const conf = {
+  'card.paymentmethod': 'CreditCard',
+  'parameters.accepturl': 'http://ya.ru/succ',
+  'parameters.exceptionurl': 'http://ya.ru/err',
+  'account.pspid': 'myaccount'
+};
+console.log(new UrlSmart('myshatoken', conf));
+```
+```
+/**
+ * To be able to use the Hosted Tokenization Page, you need to have at least one of the following options enabled:
+ *  - One Page Checkout (option ID: OPC)
+ *  - Alias Manager (option ID: REC1, REC2, RECX)
+ */
+
+// https://secure.payengine.de/ncol/prod/orderdirect.asp
+// https://secure.payengine.de/ncol/prod/alias_gateway.asp
+// https://secure.payengine.de/Tokenization/HostedPage
+```
