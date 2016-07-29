@@ -41,7 +41,7 @@ console.log(url.toString());
   - SHA-256 (is used by default in `request.CollectionChecksum`)
 
 ```js
-const checksum = concardis.request.CollectionChecksum(
+const checksum = new concardis.request.CollectionChecksum(
     new concardis.request.ObjectCollection({'pspid': 'example'}), 'sha_phrase'/*, 'sha512'*/
 );
 console.log(checksum.toString());
