@@ -50,6 +50,7 @@ const payload = {
   alias: 'FE521799-50BB-47E6-AA10-B7B15CB3A0CC',
   amount: 7700,
   currency: 'EUR',
+  cvc: '123', // or eci: 2/9
   operation: 'SAL',
   orderid: '1234567890',
   pspid: 'MyPspid',
