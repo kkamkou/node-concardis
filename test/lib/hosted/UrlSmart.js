@@ -7,6 +7,19 @@ const path = require('path');
 const UrlSmart = require(path.join(DIR_SRC, 'UrlSmart'));
 
 describe('HostedPageUrlSmart', () => {
+  it('thrown in case some params are missing', () => {
+    (() => UrlSmart.test('https://example.com', {key: 'val'})).should.throw(Error);
+  });
+
+  it('thrown in case some params are missing (variants)', () => {
+    (() => UrlSmart.test('https://example.com', {
+      'parameters.accepturl': 'val',
+      'parameters.exceptionurl': 'val',
+      'account.pspid': 'val',
+      'shasignature.shasign': 'val'
+    })).should.throw(Error);
+  });
+
   it('generate a tokenize link', () => {
     const obj = {
         'card.paymentmethod': 'CreditCard',
