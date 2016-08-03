@@ -13,23 +13,6 @@ describe('HostedPageUrl', () => {
     (() => new Url('https://example.com')).should.throw(TypeError);
   });
 
-  it('thrown in case some params are missing', () => {
-    const url = new Url('https://example.com', new Collection([new Argument('key', 'val')]));
-    (() => url.toString()).should.throw(Error);
-  });
-
-  it('thrown in case some params are missing (variants)', () => {
-    const args = [
-        new Argument('parameters.accepturl', 'val'),
-        new Argument('parameters.exceptionurl', 'val'),
-        new Argument('account.pspid', 'val'),
-        new Argument('shasignature.shasign', 'val')
-      ],
-      url = new Url('https://example.com', new Collection(args));
-
-    (() => url.toString()).should.throw(Error);
-  });
-
   it('converted to string', () => {
     const args = [
         new Argument('parameters.accepturl', 'val'),

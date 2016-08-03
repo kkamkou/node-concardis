@@ -1,6 +1,6 @@
 {
   "name": "concardis",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "./lib/index.js",
   "author": "Kanstantsin Kamkou <kkamkou@gmail.com>",
   "description": "",
@@ -18,13 +18,14 @@
     "cover": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha"
   },
   "dependencies": {
-    "lodash": "~4.14",
-    "request": "~2.74"
+    "lodash": "~4.14.1",
+    "request": "~2.74",
+    "xml2js": "~0.4"
   },
   "devDependencies": {
     "istanbul": "~0.4.3",
-    "should": "~8.4",
-    "mocha": "~2.5",
+    "should": "~10.0",
+    "mocha": "~3.0.0-2",
     "mocha-lcov-reporter": "~1.2.0",
     "coveralls": "~2.11",
     "sinon": "~1.17"
