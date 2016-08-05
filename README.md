@@ -71,6 +71,11 @@ concardis.directlink.OrderSmart
 - [e-commerce](https://support-payengine.v-psp.com/~/media/kdb/pdf/concardis/en/123ae0b9-2864-48d4-9b06-7ed2d70db029/e-commerce.ashx)
 - [directlink](https://support-payengine.v-psp.com/~/media/kdb/pdf/concardis/en/5fb19037-3393-4cea-bace-1fd21718119f/directlink.ashx)
 
+## Tests
+```
+npm install && npm run cover
+```
+
 ## License
 The MIT License (MIT)
 
