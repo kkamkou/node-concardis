@@ -3,4 +3,5 @@
 --ui exports
 --bail
 --check-leaks
+--timeout 5000
 --recursive test/lib

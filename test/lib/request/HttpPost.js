@@ -14,7 +14,7 @@ describe('RequestHttpPost', () => {
     const instance = new HttpPost('', new ObjectCollection({theKey: 'theValue'}));
     instance.has('test').should.be.false();
     instance.has('theKey').should.be.true();
-    instance._request().should.be.eql(require('request'));
+    instance._request.should.be.eql(require('request'));
   });
 
   it('constructor type check', () => {
@@ -23,25 +23,27 @@ describe('RequestHttpPost', () => {
 
   it('submit correct request', done => {
     const instance = new HttpPost('http://ya.ru', new ObjectCollection({theKey: 'theValue'})),
-      stub = sinon.stub(instance, '_request');
+      request = sinon.stub(),
+      stub = sinon.stub(instance, '_request', {get: () => request});
 
-    stub.yields(null, {statusCode: 200}, 'got it');
+    request.yields(null, {statusCode: 200}, 'got it');
 
     instance.fetch()
       .then(result => {
         result.should.be.instanceOf(HttpResponse);
         result.code.should.equal(200);
         result.toString().should.equal('got it');
-        stub.withArgs(instance._config).calledOnce.should.be.true();
+        request.withArgs(instance._config).calledOnce.should.be.true();
         done();
       });
   });
 
   it('submit incorrect request', done => {
     const instance = new HttpPost('http://ya.ru', new ObjectCollection({theKey: 'theValue'})),
-      stub = sinon.stub(instance, '_request');
+      request = sinon.stub(),
+      stub = sinon.stub(instance, '_request', {get: () => request});
 
-    stub.yields(new Error('failed'));
+    request.yields(new Error('failed'));
 
     instance.fetch()
       .catch(err => {
