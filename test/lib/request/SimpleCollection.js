@@ -20,5 +20,6 @@ describe('RequestDefaultCollection', () => {
     collection.has('invalid').should.be.false();
     collection.has('QA_NAME1').should.be.true();
     collection.toUrn().should.equal('QA_NAME1=QA_VALUE1&QA_NAME2=QA_VALUE2');
+    collection.toJson().should.eql({QA_NAME1: 'QA_VALUE1', QA_NAME2: 'QA_VALUE2'});
   });
 });
