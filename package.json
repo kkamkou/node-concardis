@@ -1,10 +1,10 @@
 {
   "name": "concardis",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "./lib/index.js",
   "author": "Kanstantsin Kamkou <kkamkou@gmail.com>",
-  "description": "",
-  "keywords": ["a", "b"],
+  "description": "concardis payments (server-to-server)",
+  "keywords": ["concardis", "payment", "psp"],
   "repository" : {
     "type" : "git",
     "url" : "https://github.com/kkamkou/node-concardis.git"
