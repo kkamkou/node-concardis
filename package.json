@@ -1,6 +1,6 @@
 {
   "name": "concardis",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "main": "./lib/index.js",
   "author": "Kanstantsin Kamkou <kkamkou@gmail.com>",
   "description": "concardis payments (server-to-server)",
