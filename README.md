@@ -52,7 +52,7 @@ const payload = {
   alias: 'FE521799-50BB-47E6-AA10-B7B15CB3A0CC',
   amount: 7700,
   currency: 'EUR',
-  cvc: '123', // or eci: 2/9
+  cvc: '123', // or eci: 2/9; 9 is for reccurring transactions
   operation: 'SAL',
   orderid: '1234567890',
   pspid: 'MyPspid',
@@ -72,7 +72,7 @@ concardis.directlink.OrderSmart
 
 ```js
 concardis.alias.BatchSmart
-  .test('MyShaToken')
+  .test('MyPspid', 'My-API-User', 'MyApiUserPassword'/*, true*/) 
   .create([['Customer123', 'John Doe', 1012, 'VISA', 'JDoeSHOP']]).toJson()
   .then(response => console.log(response))
   .catch(error => console.error(error))
@@ -82,7 +82,7 @@ concardis.alias.BatchSmart
 
 ```js
 concardis.alias.BatchSmart
-  .production('MyShaToken')
+  .production('MyPspid', 'My-API-User', 'MyApiUserPassword'/*, true*/)
   .delete(['Customer123']).toJson()
   .then(response => console.log(response))
   .catch(error => console.error(error))

@@ -20,8 +20,10 @@ describe('FormatEnvelope', () => {
   });
 
   it('expose functionality', () => {
-    const header = new LoginHeader('3214', 'myPassword', 'test', 'MGID'),
+    const header = new LoginHeader('3214', 'User ID', 'User Password', true),
       envelope = new Envelope(header, new Footer(), []);
-    envelope.toString().should.equal(['OHL;3214;myPassword;MGID;test', null, 'OTF;'].join('\r\n'));
+    envelope.toString().should.equal(
+      ['OHL;3214;User Password;MGID;User ID', null, 'OTF;'].join('\r\n')
+    );
   });
 });
