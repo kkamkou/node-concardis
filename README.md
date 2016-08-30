@@ -66,6 +66,27 @@ concardis.directlink.OrderSmart
   .catch(error => console.error(error))
 ```
 
+### Bulk Alias management via Batch
+
+#### Alias creation
+
+```js
+concardis.alias.BatchSmart
+  .test('Customer123', 'John Doe', 1012, 'VISA', 'JDoeSHOP')
+  .create().toJson()
+ .then(response => console.log(response))
+ .catch(error => console.error(error))
+```
+
+#### Alias deletion
+
+```js
+concardis.alias.BatchSmart.test('Customer123')
+  .delete().toJson()
+  .then(response => console.log(response))
+  .catch(error => console.error(error))
+```
+
 ## Docs
 - [hosted-tokenization-page](https://support-payengine.v-psp.com/~/media/kdb/pdf/concardis/en/eee5a544-7860-4428-9956-150d1a64805f/hosted-tokenization-page.ashx)
 - [alias-gateway](https://support-payengine.v-psp.com/~/media/kdb/pdf/concardis/en/b5e53b03-49ff-4152-8df0-c14a02c1fdba/alias-gateway.ashx)
