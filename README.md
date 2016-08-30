@@ -73,7 +73,7 @@ concardis.directlink.OrderSmart
 ```js
 concardis.alias.BatchSmart
   .test('MyShaToken')
-  .create('Customer123', 'John Doe', 1012, 'VISA', 'JDoeSHOP').toJson()
+  .create([['Customer123', 'John Doe', 1012, 'VISA', 'JDoeSHOP']]).toJson()
   .then(response => console.log(response))
   .catch(error => console.error(error))
 ```
@@ -83,7 +83,7 @@ concardis.alias.BatchSmart
 ```js
 concardis.alias.BatchSmart
   .production('MyShaToken')
-  .delete('Customer123').toJson()
+  .delete(['Customer123']).toJson()
   .then(response => console.log(response))
   .catch(error => console.error(error))
 ```
