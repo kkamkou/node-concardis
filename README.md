@@ -72,16 +72,17 @@ concardis.directlink.OrderSmart
 
 ```js
 concardis.alias.BatchSmart
-  .test('Customer123', 'John Doe', 1012, 'VISA', 'JDoeSHOP')
+  .test('MyShaToken', 'Customer123', 'John Doe', 1012, 'VISA', 'JDoeSHOP')
   .create().toJson()
- .then(response => console.log(response))
- .catch(error => console.error(error))
+  .then(response => console.log(response))
+  .catch(error => console.error(error))
 ```
 
 #### Alias deletion
 
 ```js
-concardis.alias.BatchSmart.test('Customer123')
+concardis.alias.BatchSmart
+  .production('MyShaToken', 'Customer123')
   .delete().toJson()
   .then(response => console.log(response))
   .catch(error => console.error(error))
