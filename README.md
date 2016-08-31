@@ -27,8 +27,8 @@ const payload = {
   'parameters.exceptionurl': 'http://ya.ru/err'
 };
 
-const url = concardis.hosted.UrlSmart.test/*production*/('MyShaToken', payload);
-// or concardis.hosted.UrlSmart.test('myshatoken', payload, 'sha512')
+const url = concardis.hosted.UrlSmart
+  .test/*production*/('MyShaToken', payload/*, 'sha512'*/);
 
 console.log(url.toString());
 ```
@@ -73,26 +73,27 @@ concardis.directlink.OrderSmart
 #### Alias creation
 
 ```js
-concardis.alias.BatchSmart
-  .test/*production*/('MyPspId', 'My-API-User', 'MyApiUserPassword'/*, true*/) 
-  .create([['Customer123', 'John Doe', 1012, 'VISA', 'JDoeSHOP']]).toJson()
-  .then(response => console.log(response))
-  .catch(error => console.error(error))
+concardis.alias.batch.EnvelopeSmart
+  .header('MyPspId', 'My-API-User', 'MyApiUserPassword'/*, true*/) 
+  .create([['Customer123', 'John Doe', 1012, 'VISA', 'JDoeSHOP']]).toString()
 ```
 
 #### Alias deletion
 
 ```js
-concardis.alias.BatchSmart
-  .test/*production*/('MyPspId', 'My-API-User', 'MyApiUserPassword'/*, true*/)
-  .delete(['Customer123']).toJson()
-  .then(response => console.log(response))
+const message = concardis.alias.batch.EnvelopeSmart
+  .header('MyPspId', 'My-API-User', 'MyApiUserPassword'/*, true*/)
+  .delete(['Customer123']).toString();
+  
+concardis.batch.Command.check(message).toJson()
+  .then(response => console.log(response)) // NCERROR and NCSTATUS validation
   .catch(error => console.error(error))
 ```
 
 ## Docs
 - [hosted-tokenization-page](https://support-payengine.v-psp.com/~/media/kdb/pdf/concardis/en/eee5a544-7860-4428-9956-150d1a64805f/hosted-tokenization-page.ashx)
 - [alias-gateway](https://support-payengine.v-psp.com/~/media/kdb/pdf/concardis/en/b5e53b03-49ff-4152-8df0-c14a02c1fdba/alias-gateway.ashx)
+- [Alias Manager (Tokenization)](https://support-payengine.v-psp.com/~/media/kdb/pdf/concardis/en/59f4e9ae-2914-468b-8d22-84e8ea744086/alias.ashx)
 - [e-commerce](https://support-payengine.v-psp.com/~/media/kdb/pdf/concardis/en/123ae0b9-2864-48d4-9b06-7ed2d70db029/e-commerce.ashx)
 - [directlink](https://support-payengine.v-psp.com/~/media/kdb/pdf/concardis/en/5fb19037-3393-4cea-bace-1fd21718119f/directlink.ashx)
 

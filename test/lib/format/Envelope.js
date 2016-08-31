@@ -7,7 +7,8 @@ const path = require('path'),
 
 const Envelope = require(path.join(DIR_SRC, 'Envelope')),
   LoginHeader = require(path.join(DIR_SRC, 'LoginHeader')),
-  BatchSmart = require(path.join(DIR_SRC, '../alias', 'BatchSmart'));
+  EnvelopeSmart = require(path.join(DIR_SRC, '../alias/batch', 'EnvelopeSmart')),
+  CommandSmart = require(path.join(DIR_SRC, '../batch', 'CommandSmart'));
 
 describe('FormatEnvelope', () => {
   it('thrown in case of invalid params', () => {
@@ -23,15 +24,5 @@ describe('FormatEnvelope', () => {
     envelope.toString().should.equal(
       ['OHL;3214;User Password;MGID;User ID;', null, 'OTF;'].join('\r\n')
     );
-  });
-
-  it('communicate with the server', done => {
-    BatchSmart
-      .test('MyPspid', 'My-API-User', 'MyApiUserPassword'/*, true*/)
-      .delete(['Customer123']).toJson()
-      .then(response => {
-        response.NCERROR.should.containEql('50001111');
-        done();
-      });
   });
 });
