@@ -4,12 +4,12 @@ const DIR_SRC = __dirname.replace('/test', '');
 
 const path = require('path');
 
-const HttpResponse = require(path.join(DIR_SRC, 'HttpResponse'))
+const HttpResponse = require(path.join(DIR_SRC, 'HttpResponse'));
 
 describe('RequestHttpResponse', () => {
-  it('expose functionality', () => {
-    const instance = new HttpResponse(200, 'example');
-    instance.code.should.equal(200);
-    instance.toString().should.equal('example');
+  it('constructor type check', () => {
+    const instance = new HttpResponse();
+    (() => instance.toString()).should.throw('Please, re-define me');
+    (() => instance.toJson()).should.throw('Please, re-define me');
   });
 });

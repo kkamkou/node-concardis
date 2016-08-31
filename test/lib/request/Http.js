@@ -4,7 +4,7 @@ const DIR_SRC = __dirname.replace('/test', '');
 
 const path = require('path');
 
-const Http = require(path.join(DIR_SRC, 'Http'))
+const Http = require(path.join(DIR_SRC, 'Http'));
 
 describe('RequestHttp', () => {
   it('constructor type check', () => {
