@@ -61,7 +61,7 @@ const payload = {
 };
 
 concardis.directlink.OrderSmart
-  .test('MyShaToken', payload).toJson()
+  .test('MyShaToken', payload/*, 'sha512'*/).toJson()
   .then(response => console.log(response)) // NCERROR and NCSTATUS validation
   .catch(error => console.error(error))
 ```

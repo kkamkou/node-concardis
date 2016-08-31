@@ -5,7 +5,7 @@ const DIR_SRC = __dirname.replace('/test', '');
 const path = require('path');
 
 const HttpPost = require(path.join(DIR_SRC, '../request', 'HttpPost')),
-  OrderValid = require(path.join(DIR_SRC, 'OrderValid')),
+  OrderValidHttpPost = require(path.join(DIR_SRC, 'OrderValidHttpPost')),
   ObjectCollection = require(path.join(DIR_SRC, '../request', 'ObjectCollection'));
 
 describe('DirectlinkOrderValid', () => {
