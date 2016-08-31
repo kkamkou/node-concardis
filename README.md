@@ -21,13 +21,13 @@ To be able to use the Hosted Tokenization Page, you need to have at least one of
 
 ```js
 const payload = {
-  'account.pspid': 'MyPspid',
+  'account.pspid': 'MyPspId',
   'card.paymentmethod': 'CreditCard',
   'parameters.accepturl': 'http://ya.ru/succ',
   'parameters.exceptionurl': 'http://ya.ru/err'
 };
 
-const url = concardis.hosted.UrlSmart.production('MyShaToken', payload);
+const url = concardis.hosted.UrlSmart.test/*production*/('MyShaToken', payload);
 // or concardis.hosted.UrlSmart.test('myshatoken', payload, 'sha512')
 
 console.log(url.toString());
@@ -38,7 +38,9 @@ console.log(url.toString());
 
 ```js
 const checksum = new concardis.request.CollectionChecksum(
-    new concardis.request.ObjectCollection({'pspid': 'example'}), 'sha_phrase'/*, 'sha512'*/
+    new concardis.request.ObjectCollection({'pspid': 'example'}),
+    'MyShaPhrase'
+    /*, 'sha512'*/
 );
 console.log(checksum.toString());
 ```
@@ -55,13 +57,13 @@ const payload = {
   cvc: '123', // or eci: 2/9; 9 is for reccurring transactions
   operation: 'SAL',
   orderid: '1234567890',
-  pspid: 'MyPspid',
+  pspid: 'MyPspId',
   pswd: 'MyApiUserPassword',
   userid: 'My-API-User'
 };
 
 concardis.directlink.OrderSmart
-  .test('MyShaToken', payload/*, 'sha512'*/).toJson()
+  .test/*production*/('MyShaToken', payload/*, 'sha512'*/).toJson()
   .then(response => console.log(response)) // NCERROR and NCSTATUS validation
   .catch(error => console.error(error))
 ```
@@ -72,7 +74,7 @@ concardis.directlink.OrderSmart
 
 ```js
 concardis.alias.BatchSmart
-  .test('MyPspid', 'My-API-User', 'MyApiUserPassword'/*, true*/) 
+  .test/*production*/('MyPspId', 'My-API-User', 'MyApiUserPassword'/*, true*/) 
   .create([['Customer123', 'John Doe', 1012, 'VISA', 'JDoeSHOP']]).toJson()
   .then(response => console.log(response))
   .catch(error => console.error(error))
@@ -82,7 +84,7 @@ concardis.alias.BatchSmart
 
 ```js
 concardis.alias.BatchSmart
-  .production('MyPspid', 'My-API-User', 'MyApiUserPassword'/*, true*/)
+  .test/*production*/('MyPspId', 'My-API-User', 'MyApiUserPassword'/*, true*/)
   .delete(['Customer123']).toJson()
   .then(response => console.log(response))
   .catch(error => console.error(error))
