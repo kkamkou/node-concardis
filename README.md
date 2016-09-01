@@ -73,9 +73,13 @@ concardis.directlink.OrderSmart
 #### Alias creation
 
 ```js
+const alias = [
+  'Customer123', 'John Doe', '4111111111111111', 1012, 'VISA', 'JDoeSHOP'
+];
+
 const message = concardis.alias.batch.EnvelopeSmart
   .header('MyPspId', 'My-API-User', 'MyApiUserPassword'/*, true*/) 
-  .create([['Customer123', 'John Doe', 1012, 'VISA', 'JDoeSHOP']]).toString()
+  .create([alias]).toString()
 
 // two step process goes here, see the alias deletion section below 
 ```
