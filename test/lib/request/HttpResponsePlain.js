@@ -4,7 +4,7 @@ const DIR_SRC = __dirname.replace('/test', '');
 
 const path = require('path');
 
-const HttpResponsePlain = require(path.join(DIR_SRC, 'HttpResponsePlain'))
+const HttpResponsePlain = require(path.join(DIR_SRC, 'HttpResponsePlain'));
 
 describe('RequestHttpResponsePlain', () => {
   it('expose functionality', () => {

@@ -27,7 +27,8 @@ describe('DirectlinkOrderValidHttpPost', () => {
     delete invalidPayloadWithAlias.shasign;
 
     const request = new HttpPost('', new ObjectCollection(invalidPayloadWithAlias));
-    (() => (new OrderValidHttpPost(request)).fetch()).should.throw('The "SHASIGN" param is required');
+    (() => (new OrderValidHttpPost(request)).fetch())
+      .should.throw('The "SHASIGN" param is required');
   });
 
   it('validate incoming data without an alias', () => {
@@ -35,6 +36,7 @@ describe('DirectlinkOrderValidHttpPost', () => {
     delete invalidPayloadWithoutAlias.alias;
 
     const request = new HttpPost('', new ObjectCollection(invalidPayloadWithoutAlias));
-    (() => (new OrderValidHttpPost(request)).fetch()).should.throw('The "CARDNO" param is required');
+    (() => (new OrderValidHttpPost(request)).fetch())
+      .should.throw('The "CARDNO" param is required');
   });
 });

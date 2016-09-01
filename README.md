@@ -85,8 +85,24 @@ const message = concardis.alias.batch.EnvelopeSmart
   .header('MyPspId', 'My-API-User', 'MyApiUserPassword'/*, true*/)
   .delete(['Customer123']).toString();
   
-concardis.batch.Command.check(message).toJson()
-  .then(response => console.log(response)) // NCERROR and NCSTATUS validation
+// step 1 (acuaring FILEID)
+concardis.batch.CommandSmart.test/*production*/()
+  .check(message).toJson()
+  .then(response => {
+    // NCERROR validation
+    // example FILEID: response.FORMAT_CHECK[0].FILEID[0]
+    console.log(JSON.stringify(response));
+  }) 
+  .catch(error => console.error(error))
+  
+// step 2
+concardis.batch.CommandSmart.test/*production*/()
+  .process('MyFileId').toJson()
+  .then(response => {
+    // NCERROR validation
+    // response.PROCESSING validation 
+    console.log(JSON.stringify(response));
+  }) 
   .catch(error => console.error(error))
 ```
 

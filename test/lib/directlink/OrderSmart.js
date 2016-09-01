@@ -27,10 +27,10 @@ describe('DirectlinkOrderSmart', () => {
     };
 
   it('reach the test destination', () => {
-    return OrderSmart.test('MyShaToken', payload).toJson().should.be.fulfilledWith(result)
+    return OrderSmart.test('MyShaToken', payload).toJson().should.be.fulfilledWith(result);
   });
 
   it('reach the production destination', () => {
-    return OrderSmart.production('MyShaToken', payload).toJson().should.be.fulfilledWith(result)
+    return OrderSmart.production('MyShaToken', payload).toJson().should.be.fulfilledWith(result);
   });
 });
