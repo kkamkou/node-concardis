@@ -73,9 +73,11 @@ concardis.directlink.OrderSmart
 #### Alias creation
 
 ```js
-concardis.alias.batch.EnvelopeSmart
+const message = concardis.alias.batch.EnvelopeSmart
   .header('MyPspId', 'My-API-User', 'MyApiUserPassword'/*, true*/) 
   .create([['Customer123', 'John Doe', 1012, 'VISA', 'JDoeSHOP']]).toString()
+
+// two step process goes here, see the alias deletion section below 
 ```
 
 #### Alias deletion
@@ -85,7 +87,7 @@ const message = concardis.alias.batch.EnvelopeSmart
   .header('MyPspId', 'My-API-User', 'MyApiUserPassword'/*, true*/)
   .delete(['Customer123']).toString();
   
-// step 1 (acuaring FILEID)
+// step 1 (acquiring FILEID)
 concardis.batch.CommandSmart.test/*production*/()
   .check(message).toJson()
   .then(response => {
