@@ -114,6 +114,7 @@ concardis.batch.CommandSmart.test/*production*/()
 - [Alias Manager (Tokenization)](https://support-payengine.v-psp.com/~/media/kdb/pdf/concardis/en/59f4e9ae-2914-468b-8d22-84e8ea744086/alias.ashx)
 - [e-commerce](https://support-payengine.v-psp.com/~/media/kdb/pdf/concardis/en/123ae0b9-2864-48d4-9b06-7ed2d70db029/e-commerce.ashx)
 - [directlink](https://support-payengine.v-psp.com/~/media/kdb/pdf/concardis/en/5fb19037-3393-4cea-bace-1fd21718119f/directlink.ashx)
+- [Upload/download files with ConCardis Batch (advanced)](https://support-payengine.v-psp.com/~/media/kdb/pdf/concardis/en/3fe4210b-97e3-47fd-b7c9-95d4b385f10f/batch.ashx)
 
 ## Tests
 ```
