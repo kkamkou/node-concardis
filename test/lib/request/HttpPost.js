@@ -6,8 +6,8 @@ const path = require('path'),
   sinon = require('sinon');
 
 const HttpPost = require(path.join(DIR_SRC, 'HttpPost')),
-  HttpResponse = require(path.join(DIR_SRC, 'HttpResponse')),
-  ObjectCollection = require(path.join(DIR_SRC, 'ObjectCollection'));
+  ObjectCollection = require(path.join(DIR_SRC, 'ObjectCollection')),
+  HttpResponsePlain = require(path.join(DIR_SRC, 'HttpResponsePlain'));
 
 describe('RequestHttpPost', () => {
   it('expose functionality', () => {
@@ -23,14 +23,15 @@ describe('RequestHttpPost', () => {
 
   it('submit correct request', done => {
     const instance = new HttpPost('http://ya.ru', new ObjectCollection({theKey: 'theValue'})),
-      request = sinon.stub(),
-      stub = sinon.stub(instance, '_request', {get: () => request});
+      request = sinon.stub();
+
+    sinon.stub(instance, '_request', {get: () => request});
 
     request.yields(null, {statusCode: 200}, 'got it');
 
     instance.fetch()
       .then(result => {
-        result.should.be.instanceOf(HttpResponse);
+        result.should.be.instanceOf(HttpResponsePlain);
         result.code.should.equal(200);
         result.toString().should.equal('got it');
         request.withArgs(instance._config).calledOnce.should.be.true();
@@ -40,8 +41,9 @@ describe('RequestHttpPost', () => {
 
   it('submit incorrect request', done => {
     const instance = new HttpPost('http://ya.ru', new ObjectCollection({theKey: 'theValue'})),
-      request = sinon.stub(),
-      stub = sinon.stub(instance, '_request', {get: () => request});
+      request = sinon.stub();
+
+    sinon.stub(instance, '_request', {get: () => request});
 
     request.yields(new Error('failed'));
 
