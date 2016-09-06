@@ -113,12 +113,13 @@ concardis.batch.CommandSmart.test/*production*/()
 ```
 
 ## Docs
-- [hosted-tokenization-page](https://support-payengine.v-psp.com/~/media/kdb/pdf/concardis/en/eee5a544-7860-4428-9956-150d1a64805f/hosted-tokenization-page.ashx)
-- [alias-gateway](https://support-payengine.v-psp.com/~/media/kdb/pdf/concardis/en/b5e53b03-49ff-4152-8df0-c14a02c1fdba/alias-gateway.ashx)
+- [Alias Gateway](https://support-payengine.v-psp.com/~/media/kdb/pdf/concardis/en/b5e53b03-49ff-4152-8df0-c14a02c1fdba/alias-gateway.ashx)
 - [Alias Manager (Tokenization)](https://support-payengine.v-psp.com/~/media/kdb/pdf/concardis/en/59f4e9ae-2914-468b-8d22-84e8ea744086/alias.ashx)
-- [e-commerce](https://support-payengine.v-psp.com/~/media/kdb/pdf/concardis/en/123ae0b9-2864-48d4-9b06-7ed2d70db029/e-commerce.ashx)
-- [directlink](https://support-payengine.v-psp.com/~/media/kdb/pdf/concardis/en/5fb19037-3393-4cea-bace-1fd21718119f/directlink.ashx)
-- [Upload/download files with ConCardis Batch (advanced)](https://support-payengine.v-psp.com/~/media/kdb/pdf/concardis/en/3fe4210b-97e3-47fd-b7c9-95d4b385f10f/batch.ashx)
+- [DirectLink (server-to-server)](https://support-payengine.v-psp.com/~/media/kdb/pdf/concardis/en/5fb19037-3393-4cea-bace-1fd21718119f/directlink.ashx)
+- [e-Commerce](https://support-payengine.v-psp.com/~/media/kdb/pdf/concardis/en/123ae0b9-2864-48d4-9b06-7ed2d70db029/e-commerce.ashx)
+- [Hosted Tokenization Page](https://support-payengine.v-psp.com/~/media/kdb/pdf/concardis/en/eee5a544-7860-4428-9956-150d1a64805f/hosted-tokenization-page.ashx)
+- [Transaction Statuses and Errors](https://support-payengine.v-psp.com/~/media/kdb/pdf/concardis/en/955815bf-4514-4d75-b683-21034ff5789b/statuses-and-errors.ashx)
+- [Upload/download files with Batch (advanced)](https://support-payengine.v-psp.com/~/media/kdb/pdf/concardis/en/3fe4210b-97e3-47fd-b7c9-95d4b385f10f/batch.ashx)
 
 ## Tests
 ```

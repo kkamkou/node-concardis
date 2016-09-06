@@ -7,8 +7,7 @@ const path = require('path'),
 
 const Envelope = require(path.join(DIR_SRC, 'Envelope')),
   LoginHeader = require(path.join(DIR_SRC, 'LoginHeader')),
-  EnvelopeSmart = require(path.join(DIR_SRC, '../alias/batch', 'EnvelopeSmart')),
-  CommandSmart = require(path.join(DIR_SRC, '../batch', 'CommandSmart'));
+  EnvelopeSmart = require(path.join(DIR_SRC, '../alias/batch', 'EnvelopeSmart'));
 
 describe('FormatEnvelope', () => {
   it('thrown in case of invalid params', () => {

@@ -22,6 +22,10 @@ describe('DirectlinkOrderValidHttpPost', () => {
     shasign: 'sign'
   };
 
+  it('thrown in case of invalid params', () => {
+    (() => new OrderValidHttpPost(new Date())).should.throw('"HttpPost" is expected');
+  });
+
   it('validate incoming data with an alias', () => {
     const invalidPayloadWithAlias = Object.assign({}, payloadWithAlias);
     delete invalidPayloadWithAlias.shasign;
