@@ -25,7 +25,7 @@ describe('RequestHttpPost', () => {
     const instance = new HttpPost('http://ya.ru', new ObjectCollection({theKey: 'theValue'})),
       request = sinon.stub();
 
-    sinon.stub(instance, '_request', {get: () => request});
+    sinon.stub(instance, '_request').get(() => request);
 
     request.yields(null, {statusCode: 200}, 'got it');
 
@@ -43,7 +43,7 @@ describe('RequestHttpPost', () => {
     const instance = new HttpPost('http://ya.ru', new ObjectCollection({theKey: 'theValue'})),
       request = sinon.stub();
 
-    sinon.stub(instance, '_request', {get: () => request});
+    sinon.stub(instance, '_request').get(() => request);
 
     request.yields(new Error('failed'));
 

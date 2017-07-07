@@ -4,9 +4,9 @@ const DIR_SRC = __dirname.replace('/test', '');
 
 const path = require('path');
 
-const HttpPost = require(path.join(DIR_SRC, '../request', 'HttpPost')),
+const HttpPost = require(path.join(DIR_SRC, '../../request', 'HttpPost')),
   OrderValidHttpPost = require(path.join(DIR_SRC, 'OrderValidHttpPost')),
-  ObjectCollection = require(path.join(DIR_SRC, '../request', 'ObjectCollection'));
+  ObjectCollection = require(path.join(DIR_SRC, '../../request', 'ObjectCollection'));
 
 describe('DirectlinkOrderValidHttpPost', () => {
   const payloadWithAlias = {
