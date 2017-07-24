@@ -62,7 +62,7 @@ const payload = {
   userid: 'My-API-User'
 };
 
-concardis.directlink.OrderSmart
+concardis.direct.link.OrderSmart
   .test/*production*/('MyShaToken', payload/*, 'sha512'*/).toJson()
   .then(response => console.log(response)) // NCERROR and NCSTATUS validation
   .catch(error => console.error(error))
