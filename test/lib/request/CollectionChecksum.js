@@ -13,6 +13,11 @@ describe('RequestCollectionChecksum', () => {
     (() => new CollectionChecksum(new ObjectCollection())).should.throw('Collection is empty');
   });
 
+  it('work with utf8', () => {
+    new CollectionChecksum(new ObjectCollection({quote: 'die Grüne der Wiesen'})).toString()
+      .should.equal('2E01F3441D639C58B73B9EAE37C356060A1E6380C8E612BC17F223C5928DF64F');
+  });
+
   it('ignore an empty variable', () => {
     const checksum1 = new CollectionChecksum(new ObjectCollection({hello: 1, world: ''})),
       checksum2 = new CollectionChecksum(new ObjectCollection({hello: 1})),
